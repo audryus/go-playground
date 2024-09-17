@@ -9,8 +9,8 @@ import (
 )
 
 const (
-	supabaseUrl     = "http://supabase.localdev.arpa"
-	supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.ewogICJyb2xlIjogImFub24iLAogICJpc3MiOiAic3VwYWJhc2UiLAogICJpYXQiOiAxNjk3OTQzNjAwLAogICJleHAiOiAxODU1Nzk2NDAwCn0.d7sRUH9wJKF4XuJv8h9S0XlooVMWTEo3lV04hLDLzFc"
+	supabaseUrl     = "SUPABASE_URL"
+	supabaseAnonKey = "KEY"
 )
 
 func main() {
@@ -27,7 +27,7 @@ func main() {
 	}
 	fmt.Println(usr.AccessToken)
 
-	fmt.Printf("\n%+v\n", user)
+	fmt.Printf("logado : \n%+v\n", user)
 
 	mapz := make(map[string]interface{})
 	mapz["a"] = "b"
@@ -37,18 +37,23 @@ func main() {
 		log.Fatal(err)
 	}
 
-	fmt.Printf("\n%+v\n", user)
+	fmt.Printf("novo: \n%+v\n", user)
 }
 
 func signIn(supabase *supa.Client) (*supa.AuthenticatedDetails, error) {
 	ctx := context.Background()
 	user, err := supabase.Auth.SignIn(ctx, supa.UserCredentials{
-		Email:    "em@il.com",
+		Email:    "mail@example.com",
 		Password: "password",
 	})
 	if err != nil {
 		return nil, err
 	}
+
+	//_, b := supabase.Auth.InviteUserByEmail(ctx, "mail@example.com")
+	//if b != nil {
+	//	return nil, b
+	//}
 
 	return user, err
 }

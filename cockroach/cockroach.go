@@ -14,6 +14,9 @@ func main() {
 	dsn := "postgresql://root@localhost:26257/system"
 	ctx := context.Background()
 	conn, err := pgx.Connect(ctx, dsn)
+
+	tx, err := conn.Begin(ctx)
+
 	defer func(conn *pgx.Conn) {
 		err := conn.Close(context.Background())
 		if err != nil {
@@ -26,7 +29,7 @@ func main() {
 	}
 
 	var now time.Time
-	err = conn.QueryRow(ctx, "SELECT NOW()").Scan(&now)
+	err = tx.QueryRow(ctx, "SELECT NOW()").Scan(&now)
 	if err != nil {
 		slog.Error("failed to execute query", err)
 	}

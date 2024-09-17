@@ -1,0 +1,5 @@
+bin
+*.exe
+*.log
+/oci/ppk
+*.pdf
