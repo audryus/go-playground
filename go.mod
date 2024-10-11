@@ -5,12 +5,13 @@ go 1.22
 toolchain go1.23.1
 
 require (
-	github.com/DATA-DOG/go-sqlmock v1.5.0
+	github.com/IBM/sarama v1.43.3
+	github.com/RadicalApp/libsignal-protocol-go v0.0.0-20170414202031-d09bcab9f18e
 	github.com/aws/aws-lambda-go v1.47.0
 	github.com/awslabs/aws-lambda-go-api-proxy v0.16.2
 	github.com/charmbracelet/huh v0.1.0
-	github.com/confluentinc/confluent-kafka-go/v2 v2.5.0
-	github.com/gofiber/fiber/v2 v2.52.1
+	github.com/gocql/gocql v0.0.0-20200131111108-92af2e088537
+	github.com/gofiber/fiber/v2 v2.52.5
 	github.com/gofiber/template/django/v3 v3.1.9
 	github.com/jackc/pgx/v5 v5.5.0
 	github.com/nats-io/nats.go v1.36.0
@@ -18,13 +19,16 @@ require (
 	github.com/oracle/oci-go-sdk v24.3.0+incompatible
 	github.com/redis/go-redis/v9 v9.5.0
 	github.com/resend/resend-go/v2 v2.5.0
+	github.com/scylladb/gocqlx v1.5.0
+	github.com/sqids/sqids-go v0.4.1
+	go.etcd.io/etcd/client/v3 v3.5.16
+	go.mongodb.org/mongo-driver v1.17.1
+	go.uber.org/zap v1.27.0
 	golang.org/x/oauth2 v0.17.0
 )
 
 require (
-	github.com/IBM/sarama v1.43.3 // indirect
 	github.com/RadicalApp/complete v0.0.0-20170329192659-17e6c0ee499b // indirect
-	github.com/RadicalApp/libsignal-protocol-go v0.0.0-20170414202031-d09bcab9f18e // indirect
 	github.com/alecthomas/chroma v0.10.0 // indirect
 	github.com/andybalholm/brotli v1.1.0 // indirect
 	github.com/atotto/clipboard v0.1.4 // indirect
@@ -46,7 +50,6 @@ require (
 	github.com/eapache/go-xerial-snappy v0.0.0-20230731223053-c322873962e3 // indirect
 	github.com/eapache/queue v1.1.0 // indirect
 	github.com/flosch/pongo2/v6 v6.0.0 // indirect
-	github.com/gocql/gocql v0.0.0-20200131111108-92af2e088537 // indirect
 	github.com/gofiber/template v1.8.2 // indirect
 	github.com/gofiber/utils v1.1.0 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
@@ -67,14 +70,12 @@ require (
 	github.com/jcmturner/gokrb5/v8 v8.4.4 // indirect
 	github.com/jcmturner/rpc/v2 v2.0.3 // indirect
 	github.com/klauspost/compress v1.17.9 // indirect
-	github.com/kr/text v0.2.0 // indirect
 	github.com/lucasb-eyer/go-colorful v1.2.0 // indirect
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mattn/go-localereader v0.0.1 // indirect
 	github.com/mattn/go-runewidth v0.0.15 // indirect
 	github.com/microcosm-cc/bluemonday v1.0.26 // indirect
-	github.com/mjibson/go-dsp v0.0.0-20180508042940-11479a337f12 // indirect
 	github.com/montanaflynn/stats v0.7.1 // indirect
 	github.com/muesli/ansi v0.0.0-20230316100256-276c6243b2f6 // indirect
 	github.com/muesli/cancelreader v0.2.2 // indirect
@@ -89,8 +90,6 @@ require (
 	github.com/rivo/uniseg v0.4.4 // indirect
 	github.com/rogpeppe/go-internal v1.11.0 // indirect
 	github.com/scylladb/go-reflectx v1.0.1 // indirect
-	github.com/scylladb/gocqlx v1.5.0 // indirect
-	github.com/sqids/sqids-go v0.4.1 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fasthttp v1.51.0 // indirect
 	github.com/valyala/tcplisten v1.0.0 // indirect
@@ -102,10 +101,7 @@ require (
 	github.com/yuin/goldmark-emoji v1.0.2 // indirect
 	go.etcd.io/etcd/api/v3 v3.5.16 // indirect
 	go.etcd.io/etcd/client/pkg/v3 v3.5.16 // indirect
-	go.etcd.io/etcd/client/v3 v3.5.16 // indirect
-	go.mongodb.org/mongo-driver v1.17.1 // indirect
 	go.uber.org/multierr v1.10.0 // indirect
-	go.uber.org/zap v1.27.0 // indirect
 	golang.org/x/crypto v0.26.0 // indirect
 	golang.org/x/net v0.28.0 // indirect
 	golang.org/x/sync v0.8.0 // indirect
