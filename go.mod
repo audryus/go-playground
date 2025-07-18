@@ -1,6 +1,6 @@
 module myplayground
 
-go 1.22
+go 1.23.0
 
 toolchain go1.23.1
 
@@ -24,7 +24,7 @@ require (
 	go.etcd.io/etcd/client/v3 v3.5.16
 	go.mongodb.org/mongo-driver v1.17.1
 	go.uber.org/zap v1.27.0
-	golang.org/x/oauth2 v0.17.0
+	golang.org/x/oauth2 v0.27.0
 )
 
 require (
@@ -108,7 +108,6 @@ require (
 	golang.org/x/sys v0.28.0 // indirect
 	golang.org/x/term v0.27.0 // indirect
 	golang.org/x/text v0.21.0 // indirect
-	google.golang.org/appengine v1.6.8 // indirect
 	google.golang.org/genproto/googleapis/api v0.0.0-20240318140521-94a12d6c2237 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20240318140521-94a12d6c2237 // indirect
 	google.golang.org/grpc v1.62.1 // indirect
