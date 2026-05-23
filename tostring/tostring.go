@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math/rand/v2"
+)
 
 type Lero struct {
 	a string
@@ -16,4 +19,6 @@ func main() {
 		a: "A",
 		b: "B",
 	})
+
+	fmt.Println(1 + (rand.Int64() % ((5 - 1) + 1)))
 }

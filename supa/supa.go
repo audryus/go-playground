@@ -21,7 +21,6 @@ func main() {
 	}
 
 	user, err := verifyTokenSupabase(supabase, usr.AccessToken)
-
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -61,13 +60,11 @@ func signIn(supabase *supa.Client) (*supa.AuthenticatedDetails, error) {
 func verifyTokenSupabase(supabase *supa.Client, token string) (*supa.User, error) {
 	ctx := context.Background()
 	user, err := supabase.Auth.User(ctx, token)
-
 	if err != nil {
 		fmt.Println("erro ao consultar user ..")
 		log.Fatal(err)
-		return user, err
+		return nil, err
 	}
 
 	return user, nil
-
 }

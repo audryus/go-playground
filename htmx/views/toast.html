@@ -1,0 +1,14 @@
+{% if toasties %}
+<div class="toast" hx-swap-oob="beforeend:#toasts">
+    {% for toast in toasties %}
+    <div class="alert alert-{{toast.Type}}" hx-get="/_empty" hx-trigger="load delay:2s" hx-target="this"
+        hx-swap="outerHTML">
+        <div><strong>{{toast.Title}}</strong> {{toast.Message}}</div>
+        <button class="toast__close" hx-get="/_empty" hx-target="closest .alert" hx-swap="outerHTML">
+            &times;
+        </button>
+    </div>
+    {% endfor %}
+
+</div>
+{% endif %}
